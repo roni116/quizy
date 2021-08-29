@@ -12,7 +12,7 @@ const timeCount = document.querySelector(".timer .timer_sec");
 
 // if startQuiz button clicked
 start_btn.onclick = ()=>{
-    info_box.classList.add("activeInfo"); //show info box
+    info_box.classList.remove("activeInfo"); //show info box  use add to activate the test
 }
 
 // if exitQuiz button clicked
@@ -26,11 +26,11 @@ continue_btn.onclick = ()=>{
     quiz_box.classList.add("activeQuiz"); //show quiz box
     showQuetions(0); //calling showQestions function
     queCounter(1); //passing 1 parameter to queCounter
-    startTimer(60); //calling startTimer function
+    startTimer(40); //calling startTimer function
     startTimerLine(0); //calling startTimerLine function
 }
 
-let timeValue =  60;
+let timeValue =  40;
 let que_count = 0;
 let que_numb = 1;
 let userScore = 0;
@@ -45,7 +45,7 @@ const quit_quiz = result_box.querySelector(".buttons .quit");
 restart_quiz.onclick = ()=>{
     quiz_box.classList.add("activeQuiz"); //show quiz box
     result_box.classList.remove("activeResult"); //hide result box
-    timeValue = 60; 
+    timeValue = 40; 
     que_count = 0;
     que_numb = 1;
     userScore = 0;
@@ -152,15 +152,15 @@ function showResult(){
     const scoreText = result_box.querySelector(".score_text");
     if (userScore > 3){ // if user scored more than 3
         //creating a new span tag and passing the user score number and total question number
-        let scoreTag = '<span>You got <p>'+ userScore/8*100 +'%</p>correct out of<p>'+ questions.length +'</p></span>';
+        let scoreTag = '<span>You got <p>'+ userScore +'</p>correct out of<p>'+ questions.length +'</p></span>';
         scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
     }
     else if(userScore > 1){ // if user scored more than 1
-        let scoreTag = '<span>You got <p>'+ userScore/8*100 +'%</p>correct out of<p>'+ questions.length +'</p></span>';
+        let scoreTag = '<span>You got <p>'+ userScore +'</p>correct out of<p>'+ questions.length +'</p></span>';
         scoreText.innerHTML = scoreTag;
     }
     else{ // if user scored less than 1
-        let scoreTag = '<span>and sorry, You got only <p>'+ userScore/8*100 +'%</p>correct out of <p>'+ questions.length +'</p></span>';
+        let scoreTag = '<span>and sorry, You got only <p>'+ userScore +'</p>correct out of <p>'+ questions.length +'</p></span>';
         scoreText.innerHTML = scoreTag;
     }
 }
@@ -195,7 +195,7 @@ function startTimer(time){
 }
 
 function startTimerLine(time){
-    counterLine = setInterval(timer, 110);          // for speed of the line
+    counterLine = setInterval(timer, 75);          // for speed of the line
     function timer(){
         time += 1; //upgrading time value with 1
         time_line.style.width = time + "px"; //increasing width of time_line with px by time value
