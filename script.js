@@ -12,7 +12,7 @@ const timeCount = document.querySelector(".timer .timer_sec");
 
 // if startQuiz button clicked
 start_btn.onclick = ()=>{
-    info_box.classList.remove("activeInfo"); //show info box  use add to activate the test
+    info_box.classList.add("activeInfo"); //show info box  use add to activate the test
 }
 
 // if exitQuiz button clicked
