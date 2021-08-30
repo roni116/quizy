@@ -145,9 +145,9 @@ body{
 
 .quiz_box header .timer{
     color: #004085;
-    background: #c5e1ff;
+    background: #c5e1ffe1;
     border: 1px solid #b8daff;
-    height: 45px;
+    height: 55px;
     padding: 0 8px;
     border-radius: 5px;
     display: flex;
@@ -299,7 +299,7 @@ footer button{
     outline: none;
     color: #fff;
     border-radius: 5px;
-    background: #007bff;
+    background: #015da8;
     border: 1px solid #007bff;
     line-height: 10px;
     opacity: 0;
